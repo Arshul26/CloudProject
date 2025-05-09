@@ -20,8 +20,6 @@ import {
   } from '@chakra-ui/react';
   import { MoonIcon, SunIcon } from '@chakra-ui/icons';
   import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom'; // 🛠 add useNavigate
-  import { signOut } from 'firebase/auth'; // 🛠 import signOut
-  import { auth } from '../firebase'; // 🛠 import auth
   
   export default function Navbar() {
     const { colorMode, toggleColorMode } = useColorMode();

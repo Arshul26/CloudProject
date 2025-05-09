@@ -1,0 +1,13 @@
+{
+  "resourceName": "userprofilepics",
+  "policyUUID": "726c2c65",
+  "bucketName": "user-profile-pics-arsul-001",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

@@ -1,19 +1,45 @@
-// src/pages/HackathonDetails.jsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Box, Heading, Text, Button } from '@chakra-ui/react';
+import { Box, Heading, Text, Button, Spinner } from '@chakra-ui/react';
+import { get } from '@aws-amplify/api-rest';
 
 export default function HackathonDetails() {
   const { state } = useLocation();
-  const hackathon = state?.hackathon;
+  const [hackathon, setHackathon] = useState(state?.hackathon || null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  if (!hackathon) {
-    return <Text>No hackathon data available.</Text>;
-  }
+  useEffect(() => {
+    if (!hackathon) {
+      fetchHackathonDetails();
+    }
+  }, [hackathon]);
+
+  const fetchHackathonDetails = async () => {
+    setLoading(true);
+    try {
+      const response = await get({
+        apiName: 'yourApiName', // <-- Replace with actual REST API name
+        path: '/hackathonDetails',
+      });
+      setHackathon(response);
+    } catch (err) {
+      setError('Failed to fetch hackathon details.');
+      console.error('Error fetching hackathon details:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleRegisterNow = () => {
-    window.open(hackathon['Registration Link'], '_blank');
+    if (hackathon?.['Registration Link']) {
+      window.open(hackathon['Registration Link'], '_blank');
+    }
   };
+
+  if (loading) return <Spinner size="xl" color="teal.500" />;
+  if (error) return <Text color="red.500">{error}</Text>;
+  if (!hackathon) return <Text>No hackathon data available.</Text>;
 
   return (
     <Box p={8}>

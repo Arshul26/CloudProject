@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-teamforge-dev-4391d-authRole",
+      "UnauthRoleArn": "arn:aws:iam::049277265861:role/amplify-teamforge-dev-4391d-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::049277265861:role/amplify-teamforge-dev-4391d-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-teamforge-dev-4391d-deployment",
+      "UnauthRoleName": "amplify-teamforge-dev-4391d-unauthRole",
+      "StackName": "amplify-teamforge-dev-4391d",
+      "StackId": "arn:aws:cloudformation:us-east-1:049277265861:stack/amplify-teamforge-dev-4391d/5d854ad0-2649-11f0-b85e-0ef9dbf96a71",
+      "AmplifyAppId": "d1og5ry0cr87qf"
+    },
+    "categories": {
+      "auth": {
+        "teamforge6ee8bebf": {}
+      },
+      "storage": {
+        "userprofilepics": {}
+      }
+    }
+  }
+}
