@@ -21,7 +21,7 @@ TeamForge is a powerful platform that helps developers and innovators find the p
 - **AI Matching**: Custom algorithm using NLP and preference analysis  
 - **Backend**: Node.js / Express.js  
 - **Authentication**: AWS Cognito  
-- **Database**: AWS DynamoDB  
+- **Hosting**: AWS Amplify  
 - **File Storage**: AWS S3 (for profile pictures)  
 - **Email Service**: AWS SES (for signup confirmation emails)  
 - **Access Control & Permissions**: AWS IAM  
